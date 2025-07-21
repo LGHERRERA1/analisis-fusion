@@ -1,4 +1,4 @@
-<!DOCTYPE<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -43,9 +43,9 @@
     <div class="max-w-6xl mx-auto bg-white rounded-2xl card-shadow overflow-hidden">
         
         <!-- Encabezado -->
-        <header class="bg-[#2B2725] text-white p-6 md:p-8 text-center">
+        <header class="bg-[#6E7F6A] text-white p-6 md:p-8 text-center">
             <h1 class="text-3xl md:text-4xl font-black tracking-tight">Panel de Decisión: Fusión Empresarial</h1>
-            <p class="mt-2 text-[#94d2bd] text-lg opacity-90">Seleccione un escenario para ver el análisis detallado.</p>
+            <p class="mt-2 text-white text-lg opacity-80">Seleccione un escenario para ver el análisis detallado.</p>
         </header>
 
         <main class="p-6 md:p-8">
@@ -204,11 +204,12 @@
             </div>
             
             <!-- Conclusión General -->
-            <div class="mt-8 bg-[#2B2725] text-white p-6 rounded-lg text-center group conclusion-card hover:scale-105 hover:shadow-2xl">
-                <h3 class="text-2xl font-bold mb-3 transition-colors duration-300 group-hover:text-[#FCA85D]">Conclusión Estratégica</h3>
-                <p class="text-[#94d2bd] max-w-3xl mx-auto opacity-90">
-                    El **Escenario A** no es financieramente viable bajo ningún supuesto. El **Escenario B**, aunque financieramente atractivo sin el Impuesto de Timbre (5.4 años), es **estratégicamente no recomendable** debido a los significativos riesgos cualitativos que impactarían negativamente el negocio de surfactantes.
-                </p>
+            <div id="conclusion-trigger" class="mt-8 bg-[#6E7F6A] text-white p-6 rounded-lg text-center conclusion-card cursor-pointer hover:scale-105 hover:shadow-2xl">
+                <div id="conclusion-prompt">
+                    <i class="fas fa-question-circle text-4xl text-white mb-3 opacity-80"></i>
+                    <h3 class="text-2xl font-bold">¿Cuál es la Conclusión Estratégica?</h3>
+                    <p class="text-sm text-white mt-1 opacity-70">(Haga clic para revelar)</p>
+                </div>
             </div>
         </main>
     </div>
@@ -363,6 +364,26 @@
         document.getElementById('savings-card-a').addEventListener('click', () => createModal('savings', 'a'));
         document.getElementById('cost-card-b').addEventListener('click', () => createModal('costs', 'b'));
         document.getElementById('savings-card-b').addEventListener('click', () => createModal('savings', 'b'));
+
+        document.getElementById('conclusion-trigger').addEventListener('click', () => {
+             const modalHTML = `
+                <div id="conclusion-modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+                    <div class="modal-content bg-[#6E7F6A] text-white rounded-2xl shadow-xl w-full max-w-3xl transform scale-100 p-8 text-center">
+                        <h3 class="text-3xl font-bold mb-4 text-white">Conclusión Estratégica</h3>
+                        <p class="text-white max-w-3xl mx-auto opacity-90 text-lg">
+                            El <strong>Escenario A</strong> no es financieramente viable bajo ningún supuesto. El <strong>Escenario B</strong>, aunque financieramente atractivo sin el Impuesto de Timbre (5.4 años), es <strong>estratégicamente no recomendable</strong> debido a los significativos riesgos cualitativos que impactarían negativamente el negocio de surfactantes.
+                        </p>
+                        <button class="close-modal-btn mt-6 bg-white text-[#6E7F6A] font-bold py-2 px-6 rounded-full hover:bg-slate-100">Cerrar</button>
+                    </div>
+                </div>
+            `;
+            modalContainer.innerHTML = modalHTML;
+            const modal = document.getElementById('conclusion-modal');
+            modal.querySelector('.close-modal-btn').addEventListener('click', () => closeModal());
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+        });
 
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
