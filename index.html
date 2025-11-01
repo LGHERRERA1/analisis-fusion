@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Decisión: Fusión Empresarial</title>
+    <!-- Carga de Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carga de Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- Carga de Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
@@ -25,16 +28,14 @@
             margin-right: 0.75rem;
             flex-shrink: 0;
         }
+        /* Transiciones suaves para una mejor experiencia */
         .modal-overlay, .scenario-view {
             transition: opacity 0.3s ease;
         }
         .modal-content {
             transition: transform 0.3s ease;
         }
-        .scenario-card, .qualitative-item, .conclusion-card {
-            transition: all 0.3s ease;
-        }
-        .data-card {
+        .scenario-card, .qualitative-item, .conclusion-card, .data-card {
             transition: all 0.3s ease-in-out;
         }
     </style>
@@ -76,18 +77,20 @@
                 <h2 class="text-3xl font-bold text-center text-[#4A5A6A] mb-6">Análisis Detallado: Fusión QBC + IBC</h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8">
+                    <!-- Tarjeta de Costos A -->
                     <div id="cost-card-a" class="data-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-1 cursor-pointer">
                         <div class="p-6 bg-gradient-to-br from-[#bc4749] to-[#a43d3f] text-white flex items-center justify-between">
                             <div><h2 class="text-2xl font-bold">Costos de Fusión</h2><p class="text-sm opacity-80">Inversión Única</p></div>
                             <i class="fas fa-receipt fa-3x opacity-50"></i>
                         </div>
                         <div class="p-6">
-                            <p class="text-sm font-semibold text-gray-500 uppercase">Inversión (con Imp. Timbre)</p>
-                            <p class="text-4xl lg:text-5xl font-extrabold text-[#bc4749] mt-1">$1.955.891.000</p>
-                            <p class="text-lg font-semibold text-gray-600 mt-2">Sin Imp. Timbre: <span class="font-bold text-[#4A5A6A]">$642.002.000</span></p>
+                            <p class="text-sm font-semibold text-gray-500 uppercase">Inversión Total Estimada</p>
+                            <p class="text-4xl lg:text-5xl font-extrabold text-[#bc4749] mt-1">$132.108.472</p>
+                            <p class="text-lg font-semibold text-gray-600 mt-2"><span class="font-bold text-[#4A5A6A]">Impuesto de Timbre no incluido</span></p>
                             <div class="text-right mt-2 text-sm text-[#bc4749] font-semibold">Ver detalle <i class="fas fa-arrow-right ml-1"></i></div>
                         </div>
                     </div>
+                    <!-- Tarjeta de Ahorros A -->
                     <div id="savings-card-a" class="data-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-1 cursor-pointer">
                         <div class="p-6 bg-gradient-to-br from-[#6E7F6A] to-[#5a6a57] text-white flex items-center justify-between">
                             <div><h2 class="text-2xl font-bold">Ahorros y Sinergias</h2><p class="text-sm opacity-80">Beneficio Anual</p></div>
@@ -101,25 +104,23 @@
                     </div>
                 </div>
 
+                <!-- Tarjeta de Recuperación A -->
                 <div class="bg-slate-200/50 border-t-4 border-[#4A5A6A] rounded-b-lg p-6 md:p-8 text-center card-shadow mb-8">
                     <h3 class="text-2xl font-bold text-[#4A5A6A] mb-3">Período de Recuperación Descontado</h3>
                     <p class="text-sm text-gray-600 mb-6">(Costo de Capital: 10% Anual)</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="grid grid-cols-1 md:grid-cols-1 gap-6 max-w-md mx-auto">
                         <div class="bg-white/50 p-4 rounded-xl shadow-md text-center">
-                            <h4 class="font-bold text-gray-700 mb-2">Con Impuesto de Timbre</h4>
-                            <p class="text-lg font-semibold text-gray-600">Inversión: <span class="font-bold text-xl text-[#bc4749]">$1.956 M</span></p>
-                            <p class="text-4xl font-black text-[#bc4749] tracking-tight mt-1">No se recupera</p>
-                        </div>
-                        <div class="bg-white/50 p-4 rounded-xl shadow-md text-center">
-                            <h4 class="font-bold text-gray-700 mb-2">Sin Impuesto de Timbre</h4>
-                             <p class="text-lg font-semibold text-gray-600">Inversión: <span class="font-bold text-xl text-[#bc4749]">$642 M</span></p>
-                            <p class="text-4xl font-black text-[#bc4749] tracking-tight mt-1">No se recupera</p>
+                            <h4 class="font-bold text-gray-700 mb-2">Inversión (Sin Imp. Timbre)</h4>
+                             <p class="text-lg font-semibold text-gray-600">Inversión: <span class="font-bold text-xl text-[#6E7F6A]">$132 M</span></p>
+                            <p class="text-4xl font-black text-[#6E7F6A] tracking-tight mt-1">3.2 años</p>
                         </div>
                     </div>
                 </div>
+                <!-- Análisis Cualitativo A -->
                 <div class="mt-8">
                     <h2 class="text-3xl font-bold text-center text-[#2B2725] mb-6">Análisis Cualitativo Detallado</h2>
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+                        <!-- Ventajas A -->
                         <div class="bg-[#6E7F6A]/10 p-6 rounded-lg">
                             <h3 class="text-2xl font-bold text-[#6E7F6A] mb-4"><i class="fas fa-check-circle mr-3"></i>Ventajas</h3>
                             <ul class="space-y-2">
@@ -127,6 +128,7 @@
                                 <li class="qualitative-item group p-3 rounded-lg hover:bg-[#6E7F6A] hover:text-white hover:scale-105 hover:shadow-lg"><div class="list-item"><i class="fas fa-info-circle icon text-gray-500 group-hover:text-white"></i><div><strong>Nota sobre eficiencia:</strong><p class="text-sm mt-1 text-gray-700 group-hover:text-white">No se identifican eficiencias operativas ni productivas, ya que actualmente las sinergias están plenamente aplicadas bajo una administración unificada.</p></div></div></li>
                             </ul>
                         </div>
+                        <!-- Desventajas A -->
                         <div class="bg-[#bc4749]/5 p-6 rounded-lg">
                             <h3 class="text-2xl font-bold text-[#bc4749] mb-4"><i class="fas fa-exclamation-triangle mr-3"></i>Desventajas y Riesgos</h3>
                             <ul class="space-y-2">
@@ -147,18 +149,20 @@
                 <h2 class="text-3xl font-bold text-center text-[#4A5A6A] mb-6">Análisis Detallado: Fusión QBC + IBC + QC</h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8">
+                    <!-- Tarjeta de Costos B -->
                     <div id="cost-card-b" class="data-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-1 cursor-pointer">
                         <div class="p-6 bg-gradient-to-br from-[#bc4749] to-[#a43d3f] text-white flex items-center justify-between">
                             <div><h2 class="text-2xl font-bold">Costos de Fusión</h2><p class="text-sm opacity-80">Inversión Única</p></div>
                             <i class="fas fa-receipt fa-3x opacity-50"></i>
                         </div>
                         <div class="p-6">
-                            <p class="text-sm font-semibold text-gray-500 uppercase">Inversión (con Imp. Timbre)</p>
-                            <p class="text-4xl lg:text-5xl font-extrabold text-[#bc4749] mt-1">$2.005.891.000</p>
-                            <p class="text-lg font-semibold text-gray-600 mt-2">Sin Imp. Timbre: <span class="font-bold text-[#4A5A6A]">$692.002.000</span></p>
+                            <p class="text-sm font-semibold text-gray-500 uppercase">Inversión Total Estimada</p>
+                            <p class="text-4xl lg:text-5xl font-extrabold text-[#bc4749] mt-1">$209.045.177</p>
+                            <p class="text-lg font-semibold text-gray-600 mt-2"><span class="font-bold text-[#4A5A6A]">Impuesto de Timbre no incluido</span></p>
                             <div class="text-right mt-2 text-sm text-[#bc4749] font-semibold">Ver detalle <i class="fas fa-arrow-right ml-1"></i></div>
                         </div>
                     </div>
+                    <!-- Tarjeta de Ahorros B -->
                     <div id="savings-card-b" class="data-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-1 cursor-pointer">
                         <div class="p-6 bg-gradient-to-br from-[#0a9396] to-[#005f73] text-white flex items-center justify-between">
                             <div><h2 class="text-2xl font-bold">Ahorros y Sinergias</h2><p class="text-sm opacity-80">Beneficio Anual</p></div>
@@ -172,22 +176,19 @@
                     </div>
                 </div>
 
+                <!-- Tarjeta de Recuperación B -->
                 <div class="bg-slate-200/50 border-t-4 border-[#4A5A6A] rounded-b-lg p-6 md:p-8 text-center card-shadow mb-8">
                     <h3 class="text-2xl font-bold text-[#4A5A6A] mb-3">Período de Recuperación Descontado</h3>
                      <p class="text-sm text-gray-600 mb-6">(Costo de Capital: 10% Anual)</p>
-                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                     <div class="grid grid-cols-1 md:grid-cols-1 gap-6 max-w-md mx-auto">
                         <div class="bg-white/50 p-4 rounded-xl shadow-md text-center">
-                            <h4 class="font-bold text-gray-700 mb-2">Con Impuesto de Timbre</h4>
-                            <p class="text-lg font-semibold text-gray-600">Inversión: <span class="font-bold text-xl text-[#bc4749]">$2.006 M</span></p>
-                            <p class="text-4xl font-black text-[#bc4749] tracking-tight mt-1">No se recupera</p>
-                        </div>
-                        <div class="bg-white/50 p-4 rounded-xl shadow-md text-center">
-                            <h4 class="font-bold text-gray-700 mb-2">Sin Impuesto de Timbre</h4>
-                            <p class="text-lg font-semibold text-gray-600">Inversión: <span class="font-bold text-xl text-[#6E7F6A]">$692 M</span></p>
-                            <p class="text-4xl font-black text-[#6E7F6A] tracking-tight mt-1">5.4 años</p>
+                            <h4 class="font-bold text-gray-700 mb-2">Inversión Estimada</h4>
+                            <p class="text-lg font-semibold text-gray-600">Inversión: <span class="font-bold text-xl text-[#6E7F6A]">$209 M</span></p>
+                            <p class="text-4xl font-black text-[#6E7F6A] tracking-tight mt-1">1.4 años</p>
                         </div>
                     </div>
                 </div>
+                <!-- Análisis Cualitativo B -->
                  <div class="mt-8">
                     <h2 class="text-3xl font-bold text-center text-[#2B2725] mb-6">Análisis Cualitativo Detallado</h2>
                     <div class="bg-[#bc4749]/5 p-6 rounded-lg">
@@ -214,29 +215,53 @@
         </main>
     </div>
 
-    <!-- Modals (reutilizables) -->
+    <!-- Contenedor para los Modales -->
     <div id="modal-container"></div>
 
+    <!-- INICIO DEL CÓDIGO JAVASCRIPT -->
     <script>
+        // --- SELECCIÓN DE ELEMENTOS DEL DOM ---
         const scenarioSelection = document.getElementById('scenario-selection');
         const scenarioAView = document.getElementById('scenario-a-view');
         const scenarioBView = document.getElementById('scenario-b-view');
         const modalContainer = document.getElementById('modal-container');
 
+        // --- BASE DE DATOS INTERNA (TODA LA INFORMACIÓN) ---
         const data = {
             a: {
                 costs: {
                     title: "Detalle de Costos (Escenario A)",
-                    basePatrimony: "131.388.953.000",
+                    basePatrimony: "2.228.330.000",
                     items: [
-                        { label: "Derechos Notariales (+IVA)", value: "547.202.000", comment: "0.35% sobre patrimonio + IVA" },
-                        { label: "Impuesto de Timbre", value: "1.313.889.000", comment: "1% sobre patrimonio (temporal)" },
-                        { label: "Derechos de Registro (C. Comercio)", value: "24.338.000", comment: "Tarifa legal por rangos de activos" },
-                        { label: "Impuesto de Registro", value: "462.000", comment: "Tarifa fija para acto sin cuantía" },
+                        // --- ESTA ES LA FILA QUE FALTABA ---
+                        { 
+                            label: "Derechos de escrituración", 
+                            value: "9.115.472", 
+                            comment: "Cotización oficial Notaría (Incl. IVA, Entidades)",
+                            id: 'detail-a-escritura', // ID para el trigger
+                            details: [ // Datos del PDF 1
+                                { label: "Subtotal Derechos Escrituración", value: "7.582.750" },
+                                { label: "IVA (19%)", value: "1.440.722" },
+                                { label: "Entidades Oficiales", value: "92.000" }
+                            ]
+                        },
+                        // --- FIN DE LA FILA AÑADIDA ---
+                        { 
+                            label: "Impuestos de registro de los inmuebles", 
+                            value: "52.993.000", 
+                            comment: "Cotización oficial Notaría (Boleta de rentas)",
+                            id: 'detail-a-registro', // ID para el trigger
+                            details: [ // Datos del PDF 1
+                                { label: "Boleta de Rentas", value: "52.773.000" },
+                                { label: "Otros Impuestos", value: "187.600" },
+                                { label: "Derechos de Registro", value: "28.100" },
+                                { label: "Sistemat. y Conservación", value: "4.300" }
+                            ]
+                        },
                         { label: "Asesorías Tributarias y Financieras", value: "30.000.000", comment: "Estimación de honorarios externos" },
                         { label: "Asesoría Tecnología (Software)", value: "40.000.000", comment: "Estimación de honorarios externos" }
                     ],
-                    total: "1.955.891.000"
+                    total: "132.108.472"
                 },
                 savings: {
                     title: "Detalle de Ahorros (Escenario A)",
@@ -252,17 +277,36 @@
             b: {
                 costs: {
                     title: "Detalle de Costos (Escenario B)",
-                    basePatrimony: "131.388.953.000",
+                    basePatrimony: "7.028.330.000",
                      items: [
-                        { label: "Derechos Notariales (+IVA)", value: "547.202.000", comment: "0.35% sobre patrimonio + IVA" },
-                        { label: "Impuesto de Timbre", value: "1.313.889.000", comment: "1% sobre patrimonio (temporal)" },
-                        { label: "Derechos de Registro (C. Comercio)", value: "24.338.000", comment: "Tarifa legal por rangos de activos" },
-                        { label: "Impuesto de Registro", value: "462.000", comment: "Tarifa fija para acto sin cuantía" },
+                        { 
+                            label: "Derechos de escrituración", 
+                            value: "26.346.077", // (22.062.250 + 4.191.827 + 92.000)
+                            comment: "Cotización oficial Notaría (Incl. IVA, Entidades)",
+                            id: 'detail-b-escritura', // ID para el trigger
+                            details: [ // Datos del PDF 2
+                                { label: "Subtotal Derechos Escrituración", value: "22.062.250" },
+                                { label: "IVA (19%)", value: "4.191.827" },
+                                { label: "Entidades Oficiales", value: "92.000" }
+                            ]
+                        },
+                        { 
+                            label: "Impuestos de registro", 
+                            value: "62.699.100", 
+                            comment: "Cotización oficial Notaría (Boleta de rentas)",
+                            id: 'detail-b-registro', // ID para el trigger
+                            details: [ // Datos del PDF 2
+                                { label: "Boleta de Rentas", value: "62.494.000" },
+                                { label: "Otros Impuestos", value: "173.000" },
+                                { label: "Derechos de Registro", value: "28.100" },
+                                { label: "Sistemat. y Conservación", value: "4.000" }
+                            ]
+                        },
                         { label: "Asesorías Tributarias y Financieras", value: "30.000.000", comment: "Estimación de honorarios externos" },
                         { label: "Asesoría Tecnología (Software)", value: "40.000.000", comment: "Estimación de honorarios externos" },
                         { label: "Costos Adicionales (Permisos QC)", value: "50.000.000", comment: "Estimación para trámites de QC" }
                     ],
-                    total: "2.005.891.000"
+                    total: "209.045.177"
                 },
                 savings: {
                     title: "Detalle de Ahorros (Escenario B)",
@@ -280,36 +324,60 @@
             }
         };
 
+        // --- MANEJADORES DE EVENTOS (EVENT LISTENERS) ---
+
+        // Clics en las tarjetas de selección de escenario
         document.getElementById('select-scenario-a').addEventListener('click', () => showScenario('a'));
         document.getElementById('select-scenario-b').addEventListener('click', () => showScenario('b'));
+        
+        // Clics en los botones "Volver"
         document.querySelectorAll('.back-to-selection').forEach(btn => {
             btn.addEventListener('click', showSelection);
         });
 
+        // --- FUNCIONES PRINCIPALES ---
+
+        /**
+         * Muestra la vista detallada de un escenario (A o B)
+         * @param {string} scenario - 'a' o 'b'
+         */
         function showScenario(scenario) {
-            scenarioSelection.classList.add('hidden');
+            scenarioSelection.classList.add('hidden'); // Oculta la selección
             if (scenario === 'a') {
-                scenarioAView.classList.remove('hidden');
-                scenarioBView.classList.add('hidden');
+                scenarioAView.classList.remove('hidden'); // Muestra A
+                scenarioBView.classList.add('hidden'); // Oculta B
             } else {
-                scenarioBView.classList.remove('hidden');
-                scenarioAView.classList.add('hidden');
+                scenarioBView.classList.remove('hidden'); // Muestra B
+                scenarioAView.classList.add('hidden'); // Oculta A
             }
+            window.scrollTo(0, 0); // Sube al inicio de la página
         }
 
+        /**
+         * Muestra la vista principal de selección de escenario
+         */
         function showSelection() {
-            scenarioAView.classList.add('hidden');
-            scenarioBView.classList.add('hidden');
-            scenarioSelection.classList.remove('hidden');
+            scenarioAView.classList.add('hidden'); // Oculta A
+            scenarioBView.classList.add('hidden'); // Oculta B
+            scenarioSelection.classList.remove('hidden'); // Muestra la selección
+            window.scrollTo(0, 0); // Sube al inicio de la página
         }
 
+        /**
+         * Crea y muestra un modal (ventana emergente)
+         * @param {string} type - 'costs' (costos) o 'savings' (ahorros)
+         * @param {string} scenario - 'a' o 'b'
+         */
         function createModal(type, scenario) {
             const modalData = data[scenario][type];
             const isCost = type === 'costs';
-            const color = isCost ? '#bc4749' : '#6E7F6A';
+            
+            // Define colores e iconos según el tipo de modal
+            const color = isCost ? '#bc4749' : (scenario === 'a' ? '#6E7F6A' : '#0a9396');
             const icon = isCost ? 'fa-receipt' : 'fa-piggy-bank';
             const totalLabel = isCost ? 'Total Inversión' : 'Ahorro Neto Anual';
 
+            // HTML para el patrimonio base (solo si es modal de costos)
             const basePatrimonyHTML = isCost ? `
                 <div class="p-4 bg-slate-100 rounded-lg mb-4">
                     <p class="text-sm text-gray-600">Patrimonio Base para Cálculo:</p>
@@ -317,26 +385,39 @@
                 </div>
             ` : '';
 
+            // Construye el HTML del modal dinámicamente
             const modalHTML = `
-                <div id="${type}-modal-${scenario}" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-                    <div class="modal-content bg-white rounded-2xl shadow-xl w-full max-w-2xl flex flex-col" style="max-height: 90vh;">
+                <div id="${type}-modal-${scenario}" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 opacity-0" style="transition: opacity 0.3s ease;">
+                    <div class="modal-content bg-white rounded-2xl shadow-xl w-full max-w-2xl flex flex-col transform scale-95" style="max-height: 90vh; transition: transform 0.3s ease;">
+                        <!-- Encabezado del Modal -->
                         <div class="p-6 border-b border-gray-200 flex-shrink-0 flex justify-between items-center">
                             <h3 class="text-2xl font-bold flex items-center" style="color: ${color};"><i class="fas ${icon} mr-3"></i>${modalData.title}</h3>
                             <button class="close-modal-btn text-gray-400 hover:text-gray-600 text-3xl leading-none">&times;</button>
                         </div>
+                        <!-- Cuerpo del Modal (con scroll) -->
                         <div class="p-6 overflow-y-auto">
                             ${basePatrimonyHTML}
                             <table class="w-full text-left">
                                 <thead><tr class="border-b"><th class="pb-2 font-semibold text-gray-700">Concepto</th><th class="pb-2 font-semibold text-gray-700 text-right">Valor (COP)</th></tr></thead>
                                 <tbody>
+                                    <!-- Itera sobre los items y crea una fila por cada uno -->
                                     ${modalData.items.map(item => {
                                         const valueClass = item.negative ? 'text-[#bc4749]' : '';
                                         const sign = item.negative ? '-' : '';
                                         const commentHTML = item.comment ? `<p class="text-xs text-gray-500 italic mt-1">${item.comment}</p>` : '';
-                                        return `<tr class="border-b"><td class="py-3"><div><p class="font-medium text-gray-800">${item.label}</p>${commentHTML}</div></td><td class="py-3 text-right font-mono align-top ${valueClass}">${sign}$${item.value}</td></tr>`;
+                                        
+                                        // --- MODIFICACIÓN AQUÍ ---
+                                        // Añade clases de cursor e ID si el item tiene detalles
+                                        const rowClass = item.id ? 'cursor-pointer hover:bg-slate-50 transition-colors' : '';
+                                        // Usamos un 'data-attribute' en lugar de 'id' para la delegación de eventos
+                                        const rowDataAttr = item.id ? `data-details-key="${item.id}"` : '';
+                                        const clickIndicator = item.id ? '<i class="fas fa-search-plus fa-xs text-gray-400 ml-2"></i>' : '';
+
+                                        return `<tr class="border-b ${rowClass}" ${rowDataAttr}><td class="py-3"><div><p class="font-medium text-gray-800">${item.label}${clickIndicator}</p>${commentHTML}</div></td><td class="py-3 text-right font-mono align-top ${valueClass}">${sign}$${item.value}</td></tr>`;
                                     }).join('')}
                                 </tbody>
                                 <tfoot>
+                                    <!-- Fila del Total -->
                                     <tr class="border-t-2 border-gray-300">
                                         <td class="pt-3 font-bold text-lg" style="color: ${color};">${totalLabel}</td>
                                         <td class="pt-3 font-bold text-lg text-right font-mono" style="color: ${color};">$${modalData.total}</td>
@@ -347,52 +428,203 @@
                     </div>
                 </div>
             `;
+            
+            // Añade el modal al DOM
             modalContainer.innerHTML = modalHTML;
             const modal = document.getElementById(`${type}-modal-${scenario}`);
+            const modalContent = modal.querySelector('.modal-content');
+
+            // Fuerza un reflow para que las transiciones CSS se apliquen
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+            }, 10); // Un pequeño retraso es suficiente
             
+            // --- MODIFICACIÓN AQUÍ (TODA ESTA SECCIÓN HA CAMBIADO) ---
+            // Asigna eventos usando DELEGACIÓN DE EVENTOS (más robusto)
+            const tableBody = modal.querySelector('tbody');
+            if (tableBody) {
+                tableBody.addEventListener('click', (e) => {
+                    // Encuentra la fila (TR) más cercana a donde se hizo clic
+                    const clickedRow = e.target.closest('tr');
+                    
+                    // Si no se hizo clic en una fila, o la fila no es clicable, no hagas nada
+                    if (!clickedRow || !clickedRow.dataset.detailsKey) return;
+
+                    const detailsKey = clickedRow.dataset.detailsKey;
+
+                    // Busca el item en la data usando la key
+                    const itemData = modalData.items.find(item => item.id === detailsKey);
+                    
+                    if (itemData && itemData.details) {
+                        e.stopPropagation(); // Evita que se cierre el modal principal
+                        createDetailsModal(itemData.details, `Detalle: ${itemData.label}`);
+                    }
+                });
+            }
+
+            // Asigna eventos para cerrar el modal
             modal.querySelector('.close-modal-btn').addEventListener('click', () => closeModal());
             modal.addEventListener('click', (e) => {
+                // Cierra si se hace clic fuera del contenido
                 if (e.target === modal) closeModal();
             });
         }
         
+        /**
+         * Cierra cualquier modal abierto con una transición
+         */
         function closeModal() {
-             modalContainer.innerHTML = '';
+             const modal = modalContainer.querySelector('.modal-overlay');
+             if (modal) {
+                const modalContent = modal.querySelector('.modal-content');
+                // Inicia la transición de salida
+                modal.classList.add('opacity-0');
+                modalContent.classList.add('scale-95');
+                
+                // Elimina el modal del DOM después de que termine la transición
+                setTimeout(() => {
+                    modalContainer.innerHTML = '';
+                }, 300); // Debe coincidir con la duración de la transición
+             }
         }
 
+        // --- NUEVA FUNCIÓN ---
+        /**
+         * Crea un modal de detalle (secundario) sobre el modal principal
+         * @param {Array} detailsArray - El array de objetos de detalle (label, value)
+         * @param {string} title - El título para el modal de detalle
+         */
+        function createDetailsModal(detailsArray, title) {
+            // Calcula el total de los detalles
+            const totalDetails = detailsArray.reduce((acc, item) => acc + parseFloat(item.value.replace(/[\.,]/g, '')), 0);
+            
+            const detailsModalHTML = `
+                <div id="details-modal-overlay" class="modal-overlay fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-60 p-4 opacity-0" style="transition: opacity 0.2s ease;">
+                    <div class="modal-content bg-white rounded-2xl shadow-xl w-full max-w-lg flex flex-col transform scale-95" style="transition: transform 0.2s ease;">
+                        <!-- Encabezado del Modal de Detalle -->
+                        <div class="p-5 border-b border-gray-200 flex-shrink-0 flex justify-between items-center bg-slate-50 rounded-t-2xl">
+                            <h4 class="text-lg font-bold text-[#4A5A6A]"><i class="fas fa-list-ol mr-2"></i>${title}</h4>
+                            <button class="close-details-modal-btn text-gray-400 hover:text-gray-600 text-3xl leading-none">&times;</button>
+                        </div>
+                        <!-- Cuerpo del Modal de Detalle -->
+                        <div class="p-6 overflow-y-auto">
+                            <table class="w-full text-left">
+                                <thead><tr class="border-b"><th class="pb-2 font-semibold text-gray-700">Concepto (Cotización)</th><th class="pb-2 font-semibold text-gray-700 text-right">Valor (COP)</th></tr></thead>
+                                <tbody>
+                                    ${detailsArray.map(item => `
+                                        <tr class="border-b">
+                                            <td class="py-2 text-sm text-gray-800">${item.label}</td>
+                                            <td class="py-2 text-right font-mono text-sm">$${new Intl.NumberFormat('es-CO').format(item.value)}</td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                                <tfoot>
+                                    <tr class="border-t-2 border-gray-300">
+                                        <td class="pt-2 font-bold text-gray-900">Total Detalle</td>
+                                        <td class="pt-2 font-bold text-right font-mono text-gray-900">$${new Intl.NumberFormat('es-CO').format(totalDetails)}</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Crea un div temporal para añadir el nuevo modal
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = detailsModalHTML;
+            const detailsModal = tempDiv.firstElementChild;
+            
+            // Añade el modal de detalle al contenedor principal
+            modalContainer.appendChild(detailsModal);
+            
+            const detailsModalContent = detailsModal.querySelector('.modal-content');
+            
+            // Inicia la animación de entrada
+            setTimeout(() => {
+                detailsModal.classList.remove('opacity-0');
+                detailsModalContent.classList.remove('scale-95');
+            }, 10);
+
+            // Asigna eventos de cierre para el modal de detalle
+            detailsModal.querySelector('.close-details-modal-btn').addEventListener('click', () => closeDetailsModal());
+            detailsModal.addEventListener('click', (e) => {
+                if (e.target === detailsModal) closeDetailsModal();
+            });
+        }
+
+        // --- NUEVA FUNCIÓN ---
+        /**
+         * Cierra solo el modal de detalle
+         */
+        function closeDetailsModal() {
+            const detailsModal = document.getElementById('details-modal-overlay');
+            if (detailsModal) {
+                const detailsModalContent = detailsModal.querySelector('.modal-content');
+                // Inicia animación de salida
+                detailsModal.classList.add('opacity-0');
+                detailsModalContent.classList.add('scale-95');
+                // Elimina del DOM después de la animación
+                setTimeout(() => {
+                    detailsModal.remove();
+                }, 200); // Coincide con la duración de la transición
+            }
+        }
+
+        // --- Asignación de eventos para las tarjetas de datos ---
         document.getElementById('cost-card-a').addEventListener('click', () => createModal('costs', 'a'));
         document.getElementById('savings-card-a').addEventListener('click', () => createModal('savings', 'a'));
         document.getElementById('cost-card-b').addEventListener('click', () => createModal('costs', 'b'));
         document.getElementById('savings-card-b').addEventListener('click', () => createModal('savings', 'b'));
 
+        // --- Asignación de evento para el modal de Conclusión ---
         document.getElementById('conclusion-trigger').addEventListener('click', () => {
              const modalHTML = `
-                <div id="conclusion-modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-                    <div class="modal-content bg-[#6E7F6A] text-white rounded-2xl shadow-xl w-full max-w-3xl transform scale-100 p-8 text-center">
+                <div id="conclusion-modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 opacity-0" style="transition: opacity 0.3s ease;">
+                    <div class="modal-content bg-[#6E7F6A] text-white rounded-2xl shadow-xl w-full max-w-3xl transform scale-95 p-8 text-center" style="transition: transform 0.3s ease;">
                         <h3 class="text-3xl font-bold mb-4 text-white">Conclusión Estratégica</h3>
                         <p class="text-white max-w-3xl mx-auto opacity-90 text-lg">
-                            El <strong>Escenario A</strong> no es financieramente viable bajo ningún supuesto. El <strong>Escenario B</strong>, aunque financieramente viable sin el Impuesto de Timbre (5.4 años), <strong>no es recomendable desde el punto de vista estratégico</strong> debido a los significativos riesgos cualitativos que impactarían negativamente el negocio de surfactantes.
+                            El <strong>Escenario A</strong> (QBC+IBC) es financieramente viable, con una recuperación de <strong>3.2 años</strong>, aunque presenta riesgos cualitativos (permisos, clientes).
+                            <br><br>
+                            El <strong>Escenario B</strong> (QBC+IBC+QC) es la opción más viable financieramente (recuperación de <strong>1.4 años</strong>), pero <strong>no es recomendable</strong> por los altos riesgos estratégicos y la mezcla de negocios.
                         </p>
-                        <button class="close-modal-btn mt-6 bg-white text-[#6E7F6A] font-bold py-2 px-6 rounded-full hover:bg-slate-100">Cerrar</button>
+                        <button class="close-modal-btn mt-6 bg-white text-[#6E7F6A] font-bold py-2 px-6 rounded-full hover:bg-slate-100 transition-colors">Cerrar</button>
                     </div>
                 </div>
             `;
             modalContainer.innerHTML = modalHTML;
             const modal = document.getElementById('conclusion-modal');
+            const modalContent = modal.querySelector('.modal-content');
+
+            // Inicia la transición de entrada
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+            }, 10);
+            
+            // Asigna eventos de cierre
             modal.querySelector('.close-modal-btn').addEventListener('click', () => closeModal());
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) closeModal();
             });
         });
 
+        // --- Cierre global con la tecla 'Escape' ---
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
-                closeModal();
+                // Si el modal de detalle está abierto, cierra ese primero. Si no, cierra el principal.
+                if (document.getElementById('details-modal-overlay')) {
+                    closeDetailsModal();
+                } else {
+                    closeModal();
+                }
             }
         });
 
     </script>
 </body>
 </html>
+
 
 
