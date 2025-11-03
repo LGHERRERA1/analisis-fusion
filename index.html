@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Decisión: Fusión Empresarial</title>
-    <!-- Carga de Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Carga de Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <!-- Carga de Font Awesome para iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Carga de Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carga de Google Fonts --><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- Carga de Font Awesome para iconos --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -43,93 +40,88 @@
 <body class="p-4 sm:p-6 md:p-8">
     <div class="max-w-6xl mx-auto bg-white rounded-2xl card-shadow overflow-hidden">
         
-        <!-- Encabezado -->
-        <header class="bg-[#6E7F6A] text-white p-6 md:p-8 text-center">
+        <!-- Encabezado --><header class="bg-[#6E7F6A] text-white p-6 md:p-8 text-center">
             <h1 class="text-3xl md:text-4xl font-black tracking-tight">Panel de Decisión: Fusión Empresarial</h1>
             <p class="mt-2 text-white text-lg opacity-80">Seleccione un escenario para ver el análisis detallado.</p>
         </header>
 
         <main class="p-6 md:p-8">
-            <!-- Vista de Selección de Escenario -->
-            <div id="scenario-selection" class="">
+            <!-- Vista de Selección de Escenario --><div id="scenario-selection" class="">
                 <h2 class="text-3xl font-bold text-center text-[#2B2725] mb-8">Elija una Opción de Fusión</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Card Escenario A -->
-                    <div id="select-scenario-a" class="scenario-card border-2 border-[#6E7F6A] rounded-xl p-8 text-center cursor-pointer hover:bg-slate-50 hover:shadow-2xl hover:scale-105">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Card Escenario A --><div id="select-scenario-a" class="scenario-card border-2 border-[#6E7F6A] rounded-xl p-8 text-center cursor-pointer hover:bg-slate-50 hover:shadow-2xl hover:scale-105">
                         <i class="fas fa-users text-5xl text-[#6E7F6A] mb-4"></i>
                         <h3 class="text-2xl font-bold text-[#2B2725]">Escenario A</h3>
                         <p class="text-lg font-semibold text-[#4A5A6A] mt-2">Fusión QBC + IBC</p>
                         <p class="text-sm text-gray-500 mt-4">Analizar la consolidación de las dos empresas principales.</p>
                     </div>
-                    <!-- Card Escenario B -->
-                    <div id="select-scenario-b" class="scenario-card border-2 border-[#0a9396] rounded-xl p-8 text-center cursor-pointer hover:bg-slate-50 hover:shadow-2xl hover:scale-105">
+                    <!-- Card Escenario B --><div id="select-scenario-b" class="scenario-card border-2 border-[#0a9396] rounded-xl p-8 text-center cursor-pointer hover:bg-slate-50 hover:shadow-2xl hover:scale-105">
                         <i class="fas fa-sitemap text-5xl text-[#0a9396] mb-4"></i>
                         <h3 class="text-2xl font-bold text-[#2B2725]">Escenario B</h3>
                         <p class="text-lg font-semibold text-[#4A5A6A] mt-2">Fusión QBC + IBC + QC</p>
                         <p class="text-sm text-gray-500 mt-4">Analizar la consolidación de las tres empresas del grupo.</p>
                     </div>
+                    <!-- Card Escenario C (No Fusión) --><div id="select-scenario-c" class="scenario-card border-2 border-[#ffb703] rounded-xl p-8 text-center cursor-pointer hover:bg-slate-50 hover:shadow-2xl hover:scale-105">
+                        <i class="fas fa-ban text-5xl text-[#ffb703] mb-4"></i>
+                        <h3 class="text-2xl font-bold text-[#2B2725]">Escenario C</h3>
+                        <p class="text-lg font-semibold text-[#4A5A6A] mt-2">No Fusionar las Empresas</p>
+                        <p class="text-sm text-gray-500 mt-4">Mantener la estructura empresarial actual, sin cambios.</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Vista de Análisis - Escenario A -->
-            <div id="scenario-a-view" class="scenario-view hidden">
+            <!-- Vista de Análisis - Escenario A --><div id="scenario-a-view" class="scenario-view hidden">
                 <button class="back-to-selection mb-6 text-[#4A5A6A] hover:text-[#2B2725] font-semibold"><i class="fas fa-arrow-left mr-2"></i>Volver a la selección</button>
                 <h2 class="text-3xl font-bold text-center text-[#4A5A6A] mb-6">Análisis Detallado: Fusión QBC + IBC</h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8">
-                    <!-- Tarjeta de Costos A -->
-                    <div id="cost-card-a" class="data-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-1 cursor-pointer">
+                    <!-- Tarjeta de Costos A --><div id="cost-card-a" class="data-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-1 cursor-pointer">
                         <div class="p-6 bg-gradient-to-br from-[#bc4749] to-[#a43d3f] text-white flex items-center justify-between">
                             <div><h2 class="text-2xl font-bold">Costos de Fusión</h2><p class="text-sm opacity-80">Inversión Única</p></div>
                             <i class="fas fa-receipt fa-3x opacity-50"></i>
                         </div>
                         <div class="p-6">
-                            <p class="text-sm font-semibold text-gray-500 uppercase">Inversión Total Estimada</p>
+                            <p class="text-sm font-semibold text-gray-500 uppercase">Inversión Total Estimada <span class="text-xs">(COP)</span></p>
                             <p class="text-4xl lg:text-5xl font-extrabold text-[#bc4749] mt-1">$132.108.472</p>
                             <p class="text-lg font-semibold text-gray-600 mt-2"><span class="font-bold text-[#4A5A6A]">Impuesto de Timbre no incluido</span></p>
                             <div class="text-right mt-2 text-sm text-[#bc4749] font-semibold">Ver detalle <i class="fas fa-arrow-right ml-1"></i></div>
                         </div>
                     </div>
-                    <!-- Tarjeta de Ahorros A -->
-                    <div id="savings-card-a" class="data-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-1 cursor-pointer">
+                    <!-- Tarjeta de Ahorros A --><div id="savings-card-a" class="data-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-1 cursor-pointer">
                         <div class="p-6 bg-gradient-to-br from-[#6E7F6A] to-[#5a6a57] text-white flex items-center justify-between">
                             <div><h2 class="text-2xl font-bold">Ahorros y Sinergias</h2><p class="text-sm opacity-80">Beneficio Anual</p></div>
                             <i class="fas fa-piggy-bank fa-3x opacity-50"></i>
                         </div>
                         <div class="p-6">
-                            <p class="text-sm font-semibold text-gray-500 uppercase">Ahorro Neto Anual</p>
+                            <p class="text-sm font-semibold text-gray-500 uppercase">Ahorro Neto Anual <span class="text-xs">(COP)</span></p>
                             <p class="text-4xl lg:text-5xl font-extrabold text-[#6E7F6A] mt-1">$49.943.000</p>
                             <div class="text-right mt-2 text-sm text-[#6E7F6A] font-semibold">Ver detalle <i class="fas fa-arrow-right ml-1"></i></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Tarjeta de Recuperación A -->
-                <div class="bg-slate-200/50 border-t-4 border-[#4A5A6A] rounded-b-lg p-6 md:p-8 text-center card-shadow mb-8">
+                <!-- Tarjeta de Recuperación A --><div class="bg-slate-200/50 border-t-4 border-[#4A5A6A] rounded-b-lg p-6 md:p-8 text-center card-shadow mb-8">
                     <h3 class="text-2xl font-bold text-[#4A5A6A] mb-3">Período de Recuperación Descontado</h3>
                     <p class="text-sm text-gray-600 mb-6">(Costo de Capital: 10% Anual)</p>
                     <div class="grid grid-cols-1 md:grid-cols-1 gap-6 max-w-md mx-auto">
                         <div class="bg-white/50 p-4 rounded-xl shadow-md text-center">
                             <h4 class="font-bold text-gray-700 mb-2">Inversión (Sin Imp. Timbre)</h4>
-                             <p class="text-lg font-semibold text-gray-600">Inversión: <span class="font-bold text-xl text-[#6E7F6A]">$132 M</span></p>
+                             <p class="text-lg font-semibold text-gray-600">Inversión: <span class="font-bold text-xl text-[#6E7F6A]">$132 M <span class="text-sm">(COP)</span></span></p>
                             <p class="text-4xl font-black text-[#6E7F6A] tracking-tight mt-1">3.2 años</p>
                         </div>
                     </div>
                 </div>
-                <!-- Análisis Cualitativo A -->
-                <div class="mt-8">
+                <!-- Análisis Cualitativo A --><div class="mt-8">
                     <h2 class="text-3xl font-bold text-center text-[#2B2725] mb-6">Análisis Cualitativo Detallado</h2>
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
-                        <!-- Ventajas A -->
-                        <div class="bg-[#6E7F6A]/10 p-6 rounded-lg">
+                        <!-- Ventajas A --><div class="bg-[#6E7F6A]/10 p-6 rounded-lg">
                             <h3 class="text-2xl font-bold text-[#6E7F6A] mb-4"><i class="fas fa-check-circle mr-3"></i>Ventajas</h3>
                             <ul class="space-y-2">
                                 <li class="qualitative-item group p-3 rounded-lg hover:bg-[#6E7F6A] hover:text-white hover:scale-105 hover:shadow-lg"><div class="list-item"><i class="fas fa-arrow-right icon text-[#6E7F6A] group-hover:text-white"></i><div><strong>Simplificación jurídica y fiscal:</strong><p class="text-sm mt-1 text-gray-700 group-hover:text-white">Se consolidarían obligaciones contables, tributarias y corporativas bajo una sola razón social. Facilita la preparación de estados financieros, declaraciones, actas, libros oficiales, reportes y renovaciones mercantiles.</p></div></div></li>
                                 <li class="qualitative-item group p-3 rounded-lg hover:bg-[#6E7F6A] hover:text-white hover:scale-105 hover:shadow-lg"><div class="list-item"><i class="fas fa-info-circle icon text-gray-500 group-hover:text-white"></i><div><strong>Nota sobre eficiencia:</strong><p class="text-sm mt-1 text-gray-700 group-hover:text-white">No se identifican eficiencias operativas ni productivas, ya que actualmente las sinergias están plenamente aplicadas bajo una administración unificada.</p></div></div></li>
                             </ul>
                         </div>
-                        <!-- Desventajas A -->
-                        <div class="bg-[#bc4749]/5 p-6 rounded-lg">
+                        <!-- Desventajas A --><div class="bg-[#bc4749]/5 p-6 rounded-lg">
                             <h3 class="text-2xl font-bold text-[#bc4749] mb-4"><i class="fas fa-exclamation-triangle mr-3"></i>Desventajas y Riesgos</h3>
                             <ul class="space-y-2">
                                 <li class="qualitative-item group p-3 rounded-lg hover:bg-[#bc4749] hover:text-white hover:scale-105 hover:shadow-lg"><div class="list-item"><i class="fas fa-times-circle icon text-[#bc4749] group-hover:text-white"></i><div><strong>Permiso del Ministerio de Justicia (Ácido Sulfúrico):</strong><p class="text-sm mt-1 text-gray-700 group-hover:text-white">La fusión implicaría tener un solo permiso, aumentando el riesgo en caso de suspensión, retraso o bloqueo por parte de la autoridad competente.</p></div></div></li>
@@ -143,53 +135,48 @@
                 </div>
             </div>
 
-            <!-- Vista de Análisis - Escenario B -->
-            <div id="scenario-b-view" class="scenario-view hidden">
+            <!-- Vista de Análisis - Escenario B --><div id="scenario-b-view" class="scenario-view hidden">
                 <button class="back-to-selection mb-6 text-[#4A5A6A] hover:text-[#2B2725] font-semibold"><i class="fas fa-arrow-left mr-2"></i>Volver a la selección</button>
                 <h2 class="text-3xl font-bold text-center text-[#4A5A6A] mb-6">Análisis Detallado: Fusión QBC + IBC + QC</h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8">
-                    <!-- Tarjeta de Costos B -->
-                    <div id="cost-card-b" class="data-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-1 cursor-pointer">
+                    <!-- Tarjeta de Costos B --><div id="cost-card-b" class="data-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-1 cursor-pointer">
                         <div class="p-6 bg-gradient-to-br from-[#bc4749] to-[#a43d3f] text-white flex items-center justify-between">
                             <div><h2 class="text-2xl font-bold">Costos de Fusión</h2><p class="text-sm opacity-80">Inversión Única</p></div>
                             <i class="fas fa-receipt fa-3x opacity-50"></i>
                         </div>
                         <div class="p-6">
-                            <p class="text-sm font-semibold text-gray-500 uppercase">Inversión Total Estimada</p>
+                            <p class="text-sm font-semibold text-gray-500 uppercase">Inversión Total Estimada <span class="text-xs">(COP)</span></p>
                             <p class="text-4xl lg:text-5xl font-extrabold text-[#bc4749] mt-1">$209.045.177</p>
                             <p class="text-lg font-semibold text-gray-600 mt-2"><span class="font-bold text-[#4A5A6A]">Impuesto de Timbre no incluido</span></p>
                             <div class="text-right mt-2 text-sm text-[#bc4749] font-semibold">Ver detalle <i class="fas fa-arrow-right ml-1"></i></div>
                         </div>
                     </div>
-                    <!-- Tarjeta de Ahorros B -->
-                    <div id="savings-card-b" class="data-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-1 cursor-pointer">
+                    <!-- Tarjeta de Ahorros B --><div id="savings-card-b" class="data-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-1 cursor-pointer">
                         <div class="p-6 bg-gradient-to-br from-[#0a9396] to-[#005f73] text-white flex items-center justify-between">
                             <div><h2 class="text-2xl font-bold">Ahorros y Sinergias</h2><p class="text-sm opacity-80">Beneficio Anual</p></div>
                             <i class="fas fa-piggy-bank fa-3x opacity-50"></i>
                         </div>
                         <div class="p-6">
-                            <p class="text-sm font-semibold text-gray-500 uppercase">Ahorro Estimado Anual</p>
+                            <p class="text-sm font-semibold text-gray-500 uppercase">Ahorro Estimado Anual <span class="text-xs">(COP)</span></p>
                             <p class="text-4xl lg:text-5xl font-extrabold text-[#0a9396] mt-1">$173.200.000</p>
                             <div class="text-right mt-2 text-sm text-[#005f73] font-semibold">Ver detalle <i class="fas fa-arrow-right ml-1"></i></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Tarjeta de Recuperación B -->
-                <div class="bg-slate-200/50 border-t-4 border-[#4A5A6A] rounded-b-lg p-6 md:p-8 text-center card-shadow mb-8">
+                <!-- Tarjeta de Recuperación B --><div class="bg-slate-200/50 border-t-4 border-[#4A5A6A] rounded-b-lg p-6 md:p-8 text-center card-shadow mb-8">
                     <h3 class="text-2xl font-bold text-[#4A5A6A] mb-3">Período de Recuperación Descontado</h3>
                      <p class="text-sm text-gray-600 mb-6">(Costo de Capital: 10% Anual)</p>
                      <div class="grid grid-cols-1 md:grid-cols-1 gap-6 max-w-md mx-auto">
                         <div class="bg-white/50 p-4 rounded-xl shadow-md text-center">
                             <h4 class="font-bold text-gray-700 mb-2">Inversión Estimada</h4>
-                            <p class="text-lg font-semibold text-gray-600">Inversión: <span class="font-bold text-xl text-[#6E7F6A]">$209 M</span></p>
+                            <p class="text-lg font-semibold text-gray-600">Inversión: <span class="font-bold text-xl text-[#6E7F6A]">$209 M <span class="text-sm">(COP)</span></span></p>
                             <p class="text-4xl font-black text-[#6E7F6A] tracking-tight mt-1">1.4 años</p>
                         </div>
                     </div>
                 </div>
-                <!-- Análisis Cualitativo B -->
-                 <div class="mt-8">
+                <!-- Análisis Cualitativo B --><div class="mt-8">
                     <h2 class="text-3xl font-bold text-center text-[#2B2725] mb-6">Análisis Cualitativo Detallado</h2>
                     <div class="bg-[#bc4749]/5 p-6 rounded-lg">
                         <h3 class="text-2xl font-bold text-[#bc4749] mb-4"><i class="fas fa-exclamation-triangle mr-3"></i>Desventajas y Riesgos Adicionales</h3>
@@ -203,9 +190,63 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Vista de Análisis - Escenario C (No Fusión) --><div id="scenario-c-view" class="scenario-view hidden">
+                <button class="back-to-selection mb-6 text-[#4A5A6A] hover:text-[#2B2725] font-semibold"><i class="fas fa-arrow-left mr-2"></i>Volver a la selección</button>
+                <h2 class="text-3xl font-bold text-center text-[#4A5A6A] mb-6">Análisis Detallado: No Fusionar las Empresas</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8">
+                    <!-- Tarjeta de No Costos C --><div class="data-card bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="p-6 bg-gradient-to-br from-[#ffb703] to-[#e6a200] text-white flex items-center justify-between">
+                            <div><h2 class="text-2xl font-bold">Costos de Fusión</h2><p class="text-sm opacity-80">Inversión Única</p></div>
+                            <i class="fas fa-minus-circle fa-3x opacity-50"></i>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-sm font-semibold text-gray-500 uppercase">Inversión Total Estimada <span class="text-xs">(COP)</span></p>
+                            <p class="text-4xl lg:text-5xl font-extrabold text-[#ffb703] mt-1">$0</p>
+                            <p class="text-lg font-semibold text-gray-600 mt-2">No se incurren en gastos administrativos, legales ni operativos asociados a una fusión.</p>
+                        </div>
+                    </div>
+                    <!-- Tarjeta de No Ahorros C --><div class="data-card bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="p-6 bg-gradient-to-br from-[#1b4332] to-[#002f1a] text-white flex items-center justify-between">
+                            <div><h2 class="text-2xl font-bold">Ahorros y Sinergias</h2><p class="text-sm opacity-80">Beneficio Anual</p></div>
+                            <i class="fas fa-equals fa-3x opacity-50"></i>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-sm font-semibold text-gray-500 uppercase">Ahorro Neto Anual <span class="text-xs">(COP)</span></p>
+                            <p class="text-4xl lg:text-5xl font-extrabold text-[#1b4332] mt-1">$0</p>
+                            <p class="text-lg font-semibold text-gray-600 mt-2">No se generan sinergias adicionales ni ahorros operativos nuevos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Recuperación C --><div class="bg-slate-200/50 border-t-4 border-[#4A5A6A] rounded-b-lg p-6 md:p-8 text-center card-shadow mb-8">
+                    <h3 class="text-2xl font-bold text-[#4A5A6A] mb-3">Período de Recuperación Descontado</h3>
+                     <p class="text-sm text-gray-600 mb-6">(Costo de Capital: 10% Anual)</p>
+                     <div class="grid grid-cols-1 md:grid-cols-1 gap-6 max-w-md mx-auto">
+                        <div class="bg-white/50 p-4 rounded-xl shadow-md text-center">
+                            <h4 class="font-bold text-gray-700 mb-2">Inversión</h4>
+                            <p class="text-lg font-semibold text-gray-600">Inversión: <span class="font-bold text-xl text-[#ffb703]">$0 <span class="text-sm">(COP)</span></span></p>
+                            <p class="text-4xl font-black text-[#ffb703] tracking-tight mt-1">0 años</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Análisis Cualitativo C --><div class="mt-8">
+                    <h2 class="text-3xl font-bold text-center text-[#2B2725] mb-6">Análisis Cualitativo Detallado</h2>
+                    <div class="bg-[#1b4332]/5 p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold text-[#1b4332] mb-4"><i class="fas fa-shield-alt mr-3"></i>Beneficios y Ausencia de Riesgos</h3>
+                        <ul class="space-y-2">
+                            <li class="qualitative-item group p-3 rounded-lg hover:bg-[#1b4332] hover:text-white hover:scale-105 hover:shadow-lg"><div class="list-item"><i class="fas fa-check-circle icon text-[#1b4332] group-hover:text-white"></i><div><strong>Mantenimiento de estatus quo:</strong><p class="text-sm mt-1 text-gray-700 group-hover:text-white">Se conservan las estructuras legales, fiscales y operativas actuales de cada empresa, evitando interrupciones y costos de integración.</p></div></div></li>
+                            <li class="qualitative-item group p-3 rounded-lg hover:bg-[#1b4332] hover:text-white hover:scale-105 hover:shadow-lg"><div class="list-item"><i class="fas fa-check-circle icon text-[#1b4332] group-hover:text-white"></i><div><strong>Evita riesgos de permisos:</strong><p class="text-sm mt-1 text-gray-700 group-hover:text-white">Se eliminan los riesgos asociados a la unificación de permisos (ej. Ministerio de Justicia) y los trámites de más de 60 licencias operativas.</p></div></div></li>
+                            <li class="qualitative-item group p-3 rounded-lg hover:bg-[#1b4332] hover:text-white hover:scale-105 hover:shadow-lg"><div class="list-item"><i class="fas fa-check-circle icon text-[#1b4332] group-hover:text-white"></i><div><strong>Preservación de cupos y clientes:</strong><p class="text-sm mt-1 text-gray-700 group-hover:text-white">Se mantienen los cupos individuales con proveedores clave como Ecopetrol y la flexibilidad para atender clientes que requieren múltiples proveedores.</p></div></div></li>
+                            <li class="qualitative-item group p-3 rounded-lg hover:bg-[#1b4332] hover:text-white hover:scale-105 hover:shadow-lg"><div class="list-item"><i class="fas fa-check-circle icon text-[#1b4332] group-hover:text-white"></i><div><strong>Mínimo riesgo reputacional y operativo:</strong><p class="text-sm mt-1 text-gray-700 group-hover:text-white">No hay exposición a nuevos riesgos operativos, legales o de seguridad derivados de la integración.</p></div></div></li>
+                             <li class="qualitative-item group p-3 rounded-lg hover:bg-[#1b4332] hover:text-white hover:scale-105 hover:shadow-lg"><div class="list-item"><i class="fas fa-check-circle icon text-[#1b4332] group-hover:text-white"></i><div><strong>Independencia de líneas de negocio:</strong><p class="text-sm mt-1 text-gray-700 group-hover:text-white">Las diferentes líneas de negocio (ej. ácido sulfúrico y surfactantes) conservan su perfil de riesgo y reputación individual, lo que puede ser favorable para futuras valoraciones o inversiones específicas.</p></div></div></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             
-            <!-- Conclusión General -->
-            <div id="conclusion-trigger" class="mt-8 bg-[#6E7F6A] text-white p-6 rounded-lg text-center conclusion-card cursor-pointer hover:scale-105 hover:shadow-2xl">
+            <!-- Conclusión General --><div id="conclusion-trigger" class="mt-8 bg-[#6E7F6A] text-white p-6 rounded-lg text-center conclusion-card cursor-pointer hover:scale-105 hover:shadow-2xl">
                 <div id="conclusion-prompt">
                     <i class="fas fa-question-circle text-4xl text-white mb-3 opacity-80"></i>
                     <h3 class="text-2xl font-bold">¿Cuál es la Conclusión Estratégica?</h3>
@@ -215,15 +256,14 @@
         </main>
     </div>
 
-    <!-- Contenedor para los Modales -->
-    <div id="modal-container"></div>
+    <!-- Contenedor para los Modales --><div id="modal-container"></div>
 
-    <!-- INICIO DEL CÓDIGO JAVASCRIPT -->
-    <script>
+    <!-- INICIO DEL CÓDIGO JAVASCRIPT --><script>
         // --- SELECCIÓN DE ELEMENTOS DEL DOM ---
         const scenarioSelection = document.getElementById('scenario-selection');
         const scenarioAView = document.getElementById('scenario-a-view');
         const scenarioBView = document.getElementById('scenario-b-view');
+        const scenarioCView = document.getElementById('scenario-c-view'); // Nuevo
         const modalContainer = document.getElementById('modal-container');
 
         // --- BASE DE DATOS INTERNA (TODA LA INFORMACIÓN) ---
@@ -233,7 +273,6 @@
                     title: "Detalle de Costos (Escenario A)",
                     basePatrimony: "2.228.330.000",
                     items: [
-                        // --- ESTA ES LA FILA QUE FALTABA ---
                         { 
                             label: "Derechos de escrituración", 
                             value: "9.115.472", 
@@ -245,7 +284,6 @@
                                 { label: "Entidades Oficiales", value: "92.000" }
                             ]
                         },
-                        // --- FIN DE LA FILA AÑADIDA ---
                         { 
                             label: "Impuestos de registro de los inmuebles", 
                             value: "52.993.000", 
@@ -321,6 +359,18 @@
                     ],
                     total: "173.200.000"
                 }
+            },
+            c: { // Nuevo escenario C
+                costs: {
+                    title: "Costos (Escenario C)",
+                    items: [],
+                    total: "0"
+                },
+                savings: {
+                    title: "Ahorros (Escenario C)",
+                    items: [],
+                    total: "0"
+                }
             }
         };
 
@@ -329,6 +379,7 @@
         // Clics en las tarjetas de selección de escenario
         document.getElementById('select-scenario-a').addEventListener('click', () => showScenario('a'));
         document.getElementById('select-scenario-b').addEventListener('click', () => showScenario('b'));
+        document.getElementById('select-scenario-c').addEventListener('click', () => showScenario('c')); // Nuevo
         
         // Clics en los botones "Volver"
         document.querySelectorAll('.back-to-selection').forEach(btn => {
@@ -338,17 +389,23 @@
         // --- FUNCIONES PRINCIPALES ---
 
         /**
-         * Muestra la vista detallada de un escenario (A o B)
-         * @param {string} scenario - 'a' o 'b'
+         * Muestra la vista detallada de un escenario (A, B o C)
+         * @param {string} scenario - 'a', 'b' o 'c'
          */
         function showScenario(scenario) {
             scenarioSelection.classList.add('hidden'); // Oculta la selección
+            // Oculta todas las vistas de escenario
+            scenarioAView.classList.add('hidden');
+            scenarioBView.classList.add('hidden');
+            scenarioCView.classList.add('hidden'); // Nuevo
+            
+            // Muestra solo el escenario seleccionado
             if (scenario === 'a') {
-                scenarioAView.classList.remove('hidden'); // Muestra A
-                scenarioBView.classList.add('hidden'); // Oculta B
-            } else {
-                scenarioBView.classList.remove('hidden'); // Muestra B
-                scenarioAView.classList.add('hidden'); // Oculta A
+                scenarioAView.classList.remove('hidden');
+            } else if (scenario === 'b') {
+                scenarioBView.classList.remove('hidden');
+            } else if (scenario === 'c') { // Nuevo
+                scenarioCView.classList.remove('hidden');
             }
             window.scrollTo(0, 0); // Sube al inicio de la página
         }
@@ -359,6 +416,7 @@
         function showSelection() {
             scenarioAView.classList.add('hidden'); // Oculta A
             scenarioBView.classList.add('hidden'); // Oculta B
+            scenarioCView.classList.add('hidden'); // Oculta C
             scenarioSelection.classList.remove('hidden'); // Muestra la selección
             window.scrollTo(0, 0); // Sube al inicio de la página
         }
@@ -381,7 +439,7 @@
             const basePatrimonyHTML = isCost ? `
                 <div class="p-4 bg-slate-100 rounded-lg mb-4">
                     <p class="text-sm text-gray-600">Patrimonio Base para Cálculo:</p>
-                    <p class="text-lg font-bold text-[#4A5A6A]">$${modalData.basePatrimony}</p>
+                    <p class="text-lg font-bold text-[#4A5A6A]">$${modalData.basePatrimony} <span class="text-sm">(COP)</span></p>
                 </div>
             ` : '';
 
@@ -389,19 +447,16 @@
             const modalHTML = `
                 <div id="${type}-modal-${scenario}" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 opacity-0" style="transition: opacity 0.3s ease;">
                     <div class="modal-content bg-white rounded-2xl shadow-xl w-full max-w-2xl flex flex-col transform scale-95" style="max-height: 90vh; transition: transform 0.3s ease;">
-                        <!-- Encabezado del Modal -->
-                        <div class="p-6 border-b border-gray-200 flex-shrink-0 flex justify-between items-center">
+                        <!-- Encabezado del Modal --><div class="p-6 border-b border-gray-200 flex-shrink-0 flex justify-between items-center">
                             <h3 class="text-2xl font-bold flex items-center" style="color: ${color};"><i class="fas ${icon} mr-3"></i>${modalData.title}</h3>
                             <button class="close-modal-btn text-gray-400 hover:text-gray-600 text-3xl leading-none">&times;</button>
                         </div>
-                        <!-- Cuerpo del Modal (con scroll) -->
-                        <div class="p-6 overflow-y-auto">
+                        <!-- Cuerpo del Modal (con scroll) --><div class="p-6 overflow-y-auto">
                             ${basePatrimonyHTML}
                             <table class="w-full text-left">
-                                <thead><tr class="border-b"><th class="pb-2 font-semibold text-gray-700">Concepto</th><th class="pb-2 font-semibold text-gray-700 text-right">Valor (COP)</th></tr></thead>
+                                <thead><tr class="border-b"><th class="pb-2 font-semibold text-gray-700">Concepto</th><th class="pb-2 font-semibold text-gray-700 text-right">Valor <span class="text-xs">(COP)</span></th></tr></thead>
                                 <tbody>
-                                    <!-- Itera sobre los items y crea una fila por cada uno -->
-                                    ${modalData.items.map(item => {
+                                    <!-- Itera sobre los items y crea una fila por cada uno -->${modalData.items.map(item => {
                                         const valueClass = item.negative ? 'text-[#bc4749]' : '';
                                         const sign = item.negative ? '-' : '';
                                         const commentHTML = item.comment ? `<p class="text-xs text-gray-500 italic mt-1">${item.comment}</p>` : '';
@@ -417,8 +472,7 @@
                                     }).join('')}
                                 </tbody>
                                 <tfoot>
-                                    <!-- Fila del Total -->
-                                    <tr class="border-t-2 border-gray-300">
+                                    <!-- Fila del Total --><tr class="border-t-2 border-gray-300">
                                         <td class="pt-3 font-bold text-lg" style="color: ${color};">${totalLabel}</td>
                                         <td class="pt-3 font-bold text-lg text-right font-mono" style="color: ${color};">$${modalData.total}</td>
                                     </tr>
@@ -502,15 +556,13 @@
             const detailsModalHTML = `
                 <div id="details-modal-overlay" class="modal-overlay fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-60 p-4 opacity-0" style="transition: opacity 0.2s ease;">
                     <div class="modal-content bg-white rounded-2xl shadow-xl w-full max-w-lg flex flex-col transform scale-95" style="transition: transform 0.2s ease;">
-                        <!-- Encabezado del Modal de Detalle -->
-                        <div class="p-5 border-b border-gray-200 flex-shrink-0 flex justify-between items-center bg-slate-50 rounded-t-2xl">
+                        <!-- Encabezado del Modal de Detalle --><div class="p-5 border-b border-gray-200 flex-shrink-0 flex justify-between items-center bg-slate-50 rounded-t-2xl">
                             <h4 class="text-lg font-bold text-[#4A5A6A]"><i class="fas fa-list-ol mr-2"></i>${title}</h4>
                             <button class="close-details-modal-btn text-gray-400 hover:text-gray-600 text-3xl leading-none">&times;</button>
                         </div>
-                        <!-- Cuerpo del Modal de Detalle -->
-                        <div class="p-6 overflow-y-auto">
+                        <!-- Cuerpo del Modal de Detalle --><div class="p-6 overflow-y-auto">
                             <table class="w-full text-left">
-                                <thead><tr class="border-b"><th class="pb-2 font-semibold text-gray-700">Concepto (Cotización)</th><th class="pb-2 font-semibold text-gray-700 text-right">Valor (COP)</th></tr></thead>
+                                <thead><tr class="border-b"><th class="pb-2 font-semibold text-gray-700">Concepto (Cotización)</th><th class="pb-2 font-semibold text-gray-700 text-right">Valor <span class="text-xs">(COP)</span></th></tr></thead>
                                 <tbody>
                                     ${detailsArray.map(item => `
                                         <tr class="border-b">
@@ -585,9 +637,11 @@
                     <div class="modal-content bg-[#6E7F6A] text-white rounded-2xl shadow-xl w-full max-w-3xl transform scale-95 p-8 text-center" style="transition: transform 0.3s ease;">
                         <h3 class="text-3xl font-bold mb-4 text-white">Conclusión Estratégica</h3>
                         <p class="text-white max-w-3xl mx-auto opacity-90 text-lg">
-                            El <strong>Escenario A</strong> (QBC+IBC) es financieramente viable, con una recuperación de <strong>3.2 años</strong>, aunque presenta riesgos cualitativos (permisos, clientes).
+                            El <strong>Escenario A</strong> (QBC+IBC) es financieramente viable, con una recuperación de <strong>3.2 años</strong>, aunque presenta riesgos cualitativos (permisos, clientes) significativos.
                             <br><br>
-                            El <strong>Escenario B</strong> (QBC+IBC+QC) es la opción más viable financieramente (recuperación de <strong>1.4 años</strong>), pero <strong>no es recomendable</strong> por los altos riesgos estratégicos y la mezcla de negocios.
+                            El <strong>Escenario B</strong> (QBC+IBC+QC) es la opción más atractiva financieramente (recuperación de <strong>1.4 años</strong>), pero <strong>no es recomendable</strong> debido a los altos riesgos estratégicos y la mezcla de líneas de negocio incompatibles.
+                            <br><br>
+                            El <strong>Escenario C</strong> (No Fusión) no genera ahorros adicionales, pero evita por completo los riesgos asociados a la fusión, manteniendo la estabilidad operativa y legal actual. La decisión debe ponderar los ahorros frente a la mitigación de riesgos.
                         </p>
                         <button class="close-modal-btn mt-6 bg-white text-[#6E7F6A] font-bold py-2 px-6 rounded-full hover:bg-slate-100 transition-colors">Cerrar</button>
                     </div>
@@ -625,6 +679,3 @@
     </script>
 </body>
 </html>
-
-
-
